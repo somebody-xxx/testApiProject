@@ -1,0 +1,21 @@
+{
+  "name": "API autotest",
+  "version": "1.0.0",
+  "description": "Pet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Eugene",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "axios": "^0.21.1",
+    "babel-jest": "^27.0.6",
+    "jasmine": "^3.8.0",
+    "jest": "^27.0.6"
+  }
+}
