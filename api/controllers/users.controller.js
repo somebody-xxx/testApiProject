@@ -1,7 +1,7 @@
 "use strict";
-import axios from "axios";
+const axios = require('axios');
 
-export class Users {
+class Users {
   async getListUsers() {
     try {
       const response = await axios.get("https://gorest.co.in/public/v1/users");
@@ -18,4 +18,6 @@ export class Users {
   getTotalUsers(response){
     return response.data.meta.pagination.total;
   }
-}
+};
+
+module.exports = Users;

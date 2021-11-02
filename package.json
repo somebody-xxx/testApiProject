@@ -1,21 +1,27 @@
 {
-  "name": "API autotest",
+  "name": "testapiproject",
   "version": "1.0.0",
-  "description": "Pet project",
+  "description": "Api test project for gorest.co.in site",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "jest"
   },
-  "author": "Eugene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somebody-xxx/testApiProject.git"
+  },
+  "author": "Pisnyi Eugene",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/somebody-xxx/testApiProject/issues"
+  },
+  "homepage": "https://github.com/somebody-xxx/testApiProject#readme",
   "dependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-typescript": "^7.15.0",
-    "@types/jest": "^27.0.1",
-    "axios": "^0.21.1",
-    "babel-jest": "^27.0.6",
-    "jasmine": "^3.8.0",
-    "jest": "^27.0.6"
+    "axios": "^0.24.0",
+    "jasmine": "^3.10.0",
+    "jest": "^27.3.1"
   }
 }

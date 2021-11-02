@@ -1,5 +1,5 @@
 "use strict";
-import { Users } from "../../../api/controllers/aLbums.controller";
+const Users = require('../../../api/controllers/users.controller');
 const user = new Users();
 let response = [];
 
