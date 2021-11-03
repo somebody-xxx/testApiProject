@@ -5,7 +5,7 @@ let response = [];
 
 describe("List users", () => {
   beforeAll(async () => {
-    response = await user.getListUsers();
+    response = await user.getUsersList();
   });
   it('should return status 200', () => {
     expect(user.getResponseStatus(response)).toBe(200, 'Status is not correct');
@@ -24,11 +24,11 @@ describe("List users", () => {
   });
 
   it('should return only active users', async() => {
-
+    response = await user.getUsersByStatus('active');
   });
 
   it('should return only inactive users', async() => {
-
+    response = await user.getUsersByStatus('inactive');
   });
 
   it('should return only male users', async() => {
