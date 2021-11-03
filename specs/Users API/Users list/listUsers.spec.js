@@ -24,11 +24,11 @@ describe("List users", () => {
   });
 
   it('should return only active users', async() => {
-    response = await user.getUsersByStatus('active');
+    expect(await user.checkListOfUsersByStatus('active')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only inactive users', async() => {
-    response = await user.getUsersByStatus('inactive');
+    expect(await user.checkListOfUsersByStatus('inactive')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only male users', async() => {
