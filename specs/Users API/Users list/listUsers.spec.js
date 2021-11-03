@@ -1,5 +1,5 @@
 "use strict";
-const Users = require('../../../api/controllers/users.controller');
+const Users = require('../../../api/controllers/User/users.controller');
 const user = new Users();
 let response = [];
 
@@ -7,11 +7,19 @@ describe("List users", () => {
   beforeAll(async () => {
     response = await user.getListUsers();
   });
-  it('should return status 200', async () => {
+  it('should return status 200', () => {
     expect(user.getResponseStatus(response)).toBe(200, 'Status is not correct');
   });
 
-  it('shold return not empty list of users', async () => {
+  it('should return correct content-type', () => {
+    expect(user.getResponseHeaders(response)['content-type']).toBe('application/json; charset=utf-8', 'Status is not correct');
+  });
+
+  it('should have valid response time', () => {
+    expect(user.getResponseTime(response)).toBeLessThanOrEqual(1 , 'Status is not correct');
+  });
+
+  it('shold not return empty list of users', () => {
     expect(user.getTotalUsers(response)).not.toBe(0, 'The user\'s list is empty');
   });
 

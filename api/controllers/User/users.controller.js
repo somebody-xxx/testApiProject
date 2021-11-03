@@ -11,11 +11,19 @@ class Users {
     }
   }
 
-  getResponseStatus(response){
+  getResponseStatus(response) {
     return response.status;
   }
 
-  getTotalUsers(response){
+  getResponseHeaders(response) {
+    return response.headers;
+  }
+
+  getResponseTime(response) {
+    return Number(response.headers['x-runtime'])
+  }
+
+  getTotalUsers(response) {
     return response.data.meta.pagination.total;
   }
 };
