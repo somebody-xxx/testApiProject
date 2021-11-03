@@ -12,11 +12,11 @@ describe("List users", () => {
   });
 
   it('should return correct content-type', () => {
-    expect(user.getResponseHeaders(response)['content-type']).toBe('application/json; charset=utf-8', 'Status is not correct');
+    expect(user.getResponseHeaders(response)['content-type']).toBe('application/json; charset=utf-8', 'Content-type is not correct');
   });
 
   it('should have valid response time', () => {
-    expect(user.getResponseTime(response)).toBeLessThanOrEqual(1 , 'Status is not correct');
+    expect(user.getResponseTime(response)).toBeLessThanOrEqual(0.500 , 'Response time is longer than expected');
   });
 
   it('shold not return empty list of users', () => {
