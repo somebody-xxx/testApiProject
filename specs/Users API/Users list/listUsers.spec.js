@@ -1,6 +1,5 @@
 "use strict";
-const Users = require('../../../api/controllers/User/users.controller');
-const user = new Users();
+const user = require('../../../api/controllers/User/users.controller');
 let response = [];
 
 describe("List users", () => {
@@ -24,35 +23,35 @@ describe("List users", () => {
   });
 
   it('should return only active users', async() => {
-    expect(await user.checkListOfUsersByStatus('active')).toBe(true, 'List contains not only users with active status');
+    expect(await user.checkListOfUsersByParameters('%C2%A0', 'active')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only inactive users', async() => {
-    expect(await user.checkListOfUsersByStatus('inactive')).toBe(true, 'List contains not only users with active status');
+    expect(await user.checkListOfUsersByParameters('%C2%A0', 'inactive')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only male users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('male', '%C2%A0')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only female users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('female', '%C2%A0')).toBe(true, 'List contains not only users with active status');
   });
 
 
   it('should return only active male users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('male', 'active')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only inactive male users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('male', 'inactive')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only active female users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('female', 'active')).toBe(true, 'List contains not only users with active status');
   });
 
   it('should return only inactive female users', async() => {
-
+    expect(await user.checkListOfUsersByParameters('female', 'inactive')).toBe(true, 'List contains not only users with active status');
   });
 });
