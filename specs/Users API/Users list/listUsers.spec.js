@@ -38,7 +38,6 @@ describe("List users", () => {
     expect(await user.checkListOfUsersByParameters('female', '%C2%A0')).toBe(true, 'List contains not only users with active status');
   });
 
-
   it('should return only active male users', async() => {
     expect(await user.checkListOfUsersByParameters('male', 'active')).toBe(true, 'List contains not only users with active status');
   });

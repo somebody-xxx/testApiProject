@@ -18,7 +18,7 @@ class Users {
   }
 
   /**
-   * Get users by status
+   * Get users with params
    * @param {String} status 
    * @param {String} gender 
    * @param {Number} page
@@ -79,7 +79,7 @@ class Users {
     return result === false ? false : true;
   };
 
-    /**
+  /**
    * Check valid gender in geterated array
    * @param {Array<String>} arr 
    * @param {String} gender 
@@ -97,7 +97,7 @@ class Users {
     return result === false ? false : true;
   };
 
-    /**
+  /**
    * Check valid status in geterated array
    * @param {Array<String>} arr 
    * @param {String} status 
@@ -116,7 +116,7 @@ class Users {
     return result === false ? false : true;
   }
 
-    /**
+  /**
    * Check that user's list only has valid status
    * @param {String} status 
    * @param {String} gender 
@@ -171,13 +171,38 @@ class Users {
     return response.data.meta.pagination.total;
   }
 
-    /**
+  /**
    * Get total pages in user's list
    * @param {Object} response 
    * @returns {Number}
    */
      getTotalPages(response) {
       return response.data.meta.pagination.pages;
+    }
+
+    /**
+     * Create a new user
+     */
+    createNewUser() {
+      try {
+        response = axios({
+          method: 'post',
+          url: urls.usersBaseLink,
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer 2f98c9a675ce88c1e9d45c7666151f41a911d972c9d884458e043e9300134ed4'
+          },
+          data: {
+            name: '',
+            email: '',
+            gender: '',
+            status: ''
+          }
+        });
+      } catch (error) {
+        console.info(`[ERROR] createNewUser: ${error}`);
+      }
     }
 };
 
